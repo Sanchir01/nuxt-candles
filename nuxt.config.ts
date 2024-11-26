@@ -14,6 +14,7 @@ export default defineNuxtConfig({
 		pages: "./src/app/routes",
 		layouts: "./src/app/layouts",
 		public: "./src/shared/pubic",
+		plugins: "./src/shared/plugins",
 	},
-	modules: ["@nuxt/image"],
+	modules: ["@nuxt/image", "@nuxtjs/tailwindcss"],
 });
