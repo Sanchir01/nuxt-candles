@@ -9,11 +9,25 @@ export default defineNuxtConfig({
 	alias: {
 		"~": "../src",
 	},
+
 	devtools: { enabled: true },
 	dir: {
 		pages: "./src/app/routes",
 		layouts: "./src/app/layouts",
 		public: "./src/shared/pubic",
+		plugins: "./src/shared/plugins",
 	},
-	modules: ["@nuxt/image"],
+	modules: [
+		"@nuxt/image",
+		"@pinia/nuxt",
+		"@formkit/auto-animate",
+		"@nuxtjs/storybook",
+	],
+	pinia: {
+		storesDirs: ["./src/app/stores/**"],
+	},
+	typescript: {
+		typeCheck: true,
+		strict: false,
+	},
 });

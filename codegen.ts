@@ -1,24 +1,19 @@
-import type { CodegenConfig } from "@graphql-codegen/cli";
+import type { CodegenConfig } from '@graphql-codegen/cli'
 const config: CodegenConfig = {
 	overwrite: true,
-	schema: "https://feature.backend.candles.emgushovs.ru",
-	documents: ["src/**/*.vue"],
+	schema: 'https://feature.backend.candles.emgushovs.ru',
+	documents: 'src/shared/graphql/mySchemas/**/*.gql',
 	ignoreNoDocuments: true,
 	generates: {
-		"src/shared/graphql/gql/": {
-			preset: "client",
+		'src/shared/graphql/gql/': {
+			preset: 'client',
 			config: {
-				documentMode: "string",
-				useTypeImports: true,
+				preset:"client",
+				useTypeImports: true
 			},
-		},
-		"./schema.graphql": {
-			plugins: ["schema-ast"],
-			config: {
-				includeDirectives: true,
-			},
-		},
-	},
-};
+			
+		}
+	}
+}
 
-export default config;
+export default config

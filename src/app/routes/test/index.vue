@@ -1,7 +1,7 @@
 <script setup>
-import { HomePage } from "~/pages/test";
+import {} from "~/pages/test";
 </script>
 
 <template>
-  <HomePage/>
+    test
 </template>
