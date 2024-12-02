@@ -9,588 +9,640 @@ export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> =
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
-  DateTime: { input: any; output: any; }
-  Html: { input: any; output: any; }
-  PageNumber: { input: any; output: any; }
-  PageSize: { input: any; output: any; }
-  UInt: { input: any; output: any; }
-  Upload: { input: any; output: any; }
-  Url: { input: any; output: any; }
-  Uuid: { input: any; output: any; }
-};
+   ID: { input: string; output: string }
+   String: { input: string; output: string }
+   Boolean: { input: boolean; output: boolean }
+   Int: { input: number; output: number }
+   Float: { input: number; output: number }
+   DateTime: { input: any; output: any }
+   Html: { input: any; output: any }
+   PageNumber: { input: any; output: any }
+   PageSize: { input: any; output: any }
+   UInt: { input: any; output: any }
+   Upload: { input: any; output: any }
+   Url: { input: any; output: any }
+   Uuid: { input: any; output: any }
+}
 
 export type AllCandlesOk = {
-  __typename?: 'AllCandlesOk';
-  candles: Array<Candles>;
-  totalCount: TotalCountResolvingResult;
-};
-
+   __typename?: 'AllCandlesOk'
+   candles: Array<Candles>
+   totalCount: TotalCountResolvingResult
+}
 
 export type AllCandlesOkTotalCountArgs = {
-  estimate?: Scalars['UInt']['input'];
-};
+   estimate?: Scalars['UInt']['input']
+}
 
-export type AllCategoryResult = AllCandlesOk | InternalErrorProblem | VersionMismatchProblem;
+export type AllCategoryResult =
+   | AllCandlesOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type AllColorOk = {
-  __typename?: 'AllColorOk';
-  colors: Array<Color>;
-};
+   __typename?: 'AllColorOk'
+   colors: Array<Color>
+}
 
-export type AllColorResult = AllColorOk | InternalErrorProblem | VersionMismatchProblem;
+export type AllColorResult =
+   | AllColorOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type AllOrdersOk = {
-  __typename?: 'AllOrdersOk';
-  orders: Array<Orders>;
-};
+   __typename?: 'AllOrdersOk'
+   orders: Array<Orders>
+}
 
-export type AllOrdersResult = AllOrdersOk | InternalErrorProblem | UnauthorizedProblem;
+export type AllOrdersResult =
+   | AllOrdersOk
+   | InternalErrorProblem
+   | UnauthorizedProblem
 
 export type AllUserOrdersOk = {
-  __typename?: 'AllUserOrdersOk';
-  orders: Array<Orders>;
-};
+   __typename?: 'AllUserOrdersOk'
+   orders: Array<Orders>
+}
 
-export type AllUserOrdersResult = AllUserOrdersOk | InternalErrorProblem | UnauthorizedProblem;
+export type AllUserOrdersResult =
+   | AllUserOrdersOk
+   | InternalErrorProblem
+   | UnauthorizedProblem
 
 export type AuthMutations = {
-  __typename?: 'AuthMutations';
-  deleteToken?: Maybe<DeleteTokensResult>;
-  login: LoginResult;
-  newTokens: NewTokensResult;
-  registrations: RegistrationsResult;
-};
-
+   __typename?: 'AuthMutations'
+   deleteToken?: Maybe<DeleteTokensResult>
+   login: LoginResult
+   newTokens: NewTokensResult
+   registrations: RegistrationsResult
+}
 
 export type AuthMutationsLoginArgs = {
-  input: LoginInput;
-};
-
+   input: LoginInput
+}
 
 export type AuthMutationsRegistrationsArgs = {
-  input: RegistrationsInput;
-};
+   input: RegistrationsInput
+}
 
 export type Candles = {
-  __typename?: 'Candles';
-  category_id: Scalars['Uuid']['output'];
-  color_id: Scalars['Uuid']['output'];
-  created_at: Scalars['DateTime']['output'];
-  description: Scalars['String']['output'];
-  id: Scalars['Uuid']['output'];
-  images: Array<Scalars['String']['output']>;
-  price: Scalars['Int']['output'];
-  slug: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  updated_at: Scalars['DateTime']['output'];
-  version: Scalars['UInt']['output'];
-  weight: Scalars['Int']['output'];
-};
+   __typename?: 'Candles'
+   category_id: Scalars['Uuid']['output']
+   color_id: Scalars['Uuid']['output']
+   created_at: Scalars['DateTime']['output']
+   description: Scalars['String']['output']
+   id: Scalars['Uuid']['output']
+   images: Array<Scalars['String']['output']>
+   price: Scalars['Int']['output']
+   slug: Scalars['String']['output']
+   title: Scalars['String']['output']
+   updated_at: Scalars['DateTime']['output']
+   version: Scalars['UInt']['output']
+   weight: Scalars['Int']['output']
+}
 
 export type CandlesByIdInput = {
-  id: Scalars['Uuid']['input'];
-};
+   id: Scalars['Uuid']['input']
+}
 
 export type CandlesByIdOk = {
-  __typename?: 'CandlesByIdOk';
-  candle: Candles;
-};
+   __typename?: 'CandlesByIdOk'
+   candle: Candles
+}
 
-export type CandlesByIdResult = CandlesByIdOk | InternalErrorProblem | VersionMismatchProblem;
+export type CandlesByIdResult =
+   | CandlesByIdOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type CandlesBySlugInput = {
-  slug: Scalars['String']['input'];
-};
+   slug: Scalars['String']['input']
+}
 
 export type CandlesBySlugOk = {
-  __typename?: 'CandlesBySlugOk';
-  candle: Candles;
-};
+   __typename?: 'CandlesBySlugOk'
+   candle: Candles
+}
 
-export type CandlesBySlugResult = CandlesBySlugOk | InternalErrorProblem | VersionMismatchProblem;
+export type CandlesBySlugResult =
+   | CandlesBySlugOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type CandlesCreateOk = {
-  __typename?: 'CandlesCreateOk';
-  id: Scalars['Uuid']['output'];
-};
+   __typename?: 'CandlesCreateOk'
+   id: Scalars['Uuid']['output']
+}
 
 export type CandlesFilterInput = {
-  categoryId?: InputMaybe<Scalars['Uuid']['input']>;
-  colorId?: InputMaybe<Scalars['Uuid']['input']>;
-};
+   categoryId?: InputMaybe<Scalars['Uuid']['input']>
+   colorId?: InputMaybe<Scalars['Uuid']['input']>
+}
 
 export type CandlesMutation = {
-  __typename?: 'CandlesMutation';
-  createCandle: CandlesMutationResult;
-};
-
+   __typename?: 'CandlesMutation'
+   createCandle: CandlesMutationResult
+}
 
 export type CandlesMutationCreateCandleArgs = {
-  input: CreateCandleInput;
-};
+   input: CreateCandleInput
+}
 
-export type CandlesMutationResult = CandlesCreateOk | InternalErrorProblem | UnauthorizedProblem | VersionMismatchProblem;
+export type CandlesMutationResult =
+   | CandlesCreateOk
+   | InternalErrorProblem
+   | UnauthorizedProblem
+   | VersionMismatchProblem
 
 export type CandlesQuery = {
-  __typename?: 'CandlesQuery';
-  allCandles: AllCategoryResult;
-  candleById: CandlesByIdResult;
-  candleBySlug: CandlesBySlugResult;
-};
-
+   __typename?: 'CandlesQuery'
+   allCandles: AllCategoryResult
+   candleById: CandlesByIdResult
+   candleBySlug: CandlesBySlugResult
+}
 
 export type CandlesQueryAllCandlesArgs = {
-  filter?: InputMaybe<CandlesFilterInput>;
-  pageNumber?: Scalars['PageNumber']['input'];
-  pageSize?: Scalars['PageSize']['input'];
-  sort?: InputMaybe<CandlesSortEnum>;
-};
-
+   filter?: InputMaybe<CandlesFilterInput>
+   pageNumber?: Scalars['PageNumber']['input']
+   pageSize?: Scalars['PageSize']['input']
+   sort?: InputMaybe<CandlesSortEnum>
+}
 
 export type CandlesQueryCandleByIdArgs = {
-  input: CandlesByIdInput;
-};
-
+   input: CandlesByIdInput
+}
 
 export type CandlesQueryCandleBySlugArgs = {
-  input: CandlesBySlugInput;
-};
+   input: CandlesBySlugInput
+}
 
 export enum CandlesSortEnum {
-  CreatedAtAsc = 'CREATED_AT_ASC',
-  CreatedAtDesc = 'CREATED_AT_DESC',
-  PriceAsc = 'PRICE_ASC',
-  PriceDesc = 'PRICE_DESC',
-  SortRankAsc = 'SORT_RANK_ASC',
-  SortRankDesc = 'SORT_RANK_DESC'
+   CreatedAtAsc = 'CREATED_AT_ASC',
+   CreatedAtDesc = 'CREATED_AT_DESC',
+   PriceAsc = 'PRICE_ASC',
+   PriceDesc = 'PRICE_DESC',
+   SortRankAsc = 'SORT_RANK_ASC',
+   SortRankDesc = 'SORT_RANK_DESC'
 }
 
 export type Category = VersionInterface & {
-  __typename?: 'Category';
-  created_at: Scalars['DateTime']['output'];
-  id: Scalars['Uuid']['output'];
-  slug: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  updated_at: Scalars['DateTime']['output'];
-  version: Scalars['UInt']['output'];
-};
+   __typename?: 'Category'
+   created_at: Scalars['DateTime']['output']
+   id: Scalars['Uuid']['output']
+   slug: Scalars['String']['output']
+   title: Scalars['String']['output']
+   updated_at: Scalars['DateTime']['output']
+   version: Scalars['UInt']['output']
+}
 
 export type CategoryByIdInput = {
-  id: Scalars['Uuid']['input'];
-};
+   id: Scalars['Uuid']['input']
+}
 
 export type CategoryByIdOk = {
-  __typename?: 'CategoryByIdOk';
-  category?: Maybe<Category>;
-};
+   __typename?: 'CategoryByIdOk'
+   category?: Maybe<Category>
+}
 
-export type CategoryByIdResult = CategoryByIdOk | InternalErrorProblem | VersionMismatchProblem;
+export type CategoryByIdResult =
+   | CategoryByIdOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type CategoryBySlugInput = {
-  slug: Scalars['String']['input'];
-};
+   slug: Scalars['String']['input']
+}
 
 export type CategoryBySlugOk = {
-  __typename?: 'CategoryBySlugOk';
-  category?: Maybe<Category>;
-};
+   __typename?: 'CategoryBySlugOk'
+   category?: Maybe<Category>
+}
 
-export type CategoryBySlugResult = CategoryBySlugOk | InternalErrorProblem | VersionMismatchProblem;
+export type CategoryBySlugResult =
+   | CategoryBySlugOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type CategoryCreateOk = {
-  __typename?: 'CategoryCreateOk';
-  id: Scalars['Uuid']['output'];
-};
+   __typename?: 'CategoryCreateOk'
+   id: Scalars['Uuid']['output']
+}
 
-export type CategoryCreateResult = CategoryCreateOk | InternalErrorProblem | UnauthorizedProblem | VersionMismatchProblem;
+export type CategoryCreateResult =
+   | CategoryCreateOk
+   | InternalErrorProblem
+   | UnauthorizedProblem
+   | VersionMismatchProblem
 
 export type CategoryGetAllOk = {
-  __typename?: 'CategoryGetAllOk';
-  category: Array<Category>;
-};
+   __typename?: 'CategoryGetAllOk'
+   category: Array<Category>
+}
 
-export type CategoryGetAllResult = CategoryGetAllOk | InternalErrorProblem;
+export type CategoryGetAllResult = CategoryGetAllOk | InternalErrorProblem
 
 export type CategoryMutation = {
-  __typename?: 'CategoryMutation';
-  createCategory: CategoryCreateResult;
-  delete?: Maybe<DeleteCategoryResult>;
-  updateCategory: UpdateCategoryResult;
-};
-
+   __typename?: 'CategoryMutation'
+   createCategory: CategoryCreateResult
+   delete?: Maybe<DeleteCategoryResult>
+   updateCategory: UpdateCategoryResult
+}
 
 export type CategoryMutationCreateCategoryArgs = {
-  input?: InputMaybe<CreateCategoryInput>;
-};
-
+   input?: InputMaybe<CreateCategoryInput>
+}
 
 export type CategoryMutationDeleteArgs = {
-  input?: InputMaybe<DeleteCategoryInput>;
-};
-
+   input?: InputMaybe<DeleteCategoryInput>
+}
 
 export type CategoryMutationUpdateCategoryArgs = {
-  input: UpdateCategoryInput;
-};
+   input: UpdateCategoryInput
+}
 
 export type CategoryQuery = {
-  __typename?: 'CategoryQuery';
-  categoryById: CategoryByIdResult;
-  categoryBySlug: CategoryBySlugResult;
-  getAllCategory: CategoryGetAllResult;
-};
-
+   __typename?: 'CategoryQuery'
+   categoryById: CategoryByIdResult
+   categoryBySlug: CategoryBySlugResult
+   getAllCategory: CategoryGetAllResult
+}
 
 export type CategoryQueryCategoryByIdArgs = {
-  input: CategoryByIdInput;
-};
-
+   input: CategoryByIdInput
+}
 
 export type CategoryQueryCategoryBySlugArgs = {
-  input: CategoryBySlugInput;
-};
+   input: CategoryBySlugInput
+}
 
 export type Color = {
-  __typename?: 'Color';
-  created_at: Scalars['DateTime']['output'];
-  id: Scalars['Uuid']['output'];
-  slug: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  updated_at: Scalars['DateTime']['output'];
-  version: Scalars['UInt']['output'];
-};
+   __typename?: 'Color'
+   created_at: Scalars['DateTime']['output']
+   id: Scalars['Uuid']['output']
+   slug: Scalars['String']['output']
+   title: Scalars['String']['output']
+   updated_at: Scalars['DateTime']['output']
+   version: Scalars['UInt']['output']
+}
 
 export type ColorByIdInput = {
-  id: Scalars['Uuid']['input'];
-};
+   id: Scalars['Uuid']['input']
+}
 
 export type ColorByIdOk = {
-  __typename?: 'ColorByIdOk';
-  colors: Color;
-};
+   __typename?: 'ColorByIdOk'
+   colors: Color
+}
 
-export type ColorByIdResult = ColorByIdOk | InternalErrorProblem | VersionMismatchProblem;
+export type ColorByIdResult =
+   | ColorByIdOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type ColorBySlugInput = {
-  slug: Scalars['String']['input'];
-};
+   slug: Scalars['String']['input']
+}
 
 export type ColorBySlugOk = {
-  __typename?: 'ColorBySlugOk';
-  colors: Color;
-};
+   __typename?: 'ColorBySlugOk'
+   colors: Color
+}
 
-export type ColorBySlugResult = ColorBySlugOk | InternalErrorProblem | VersionMismatchProblem;
+export type ColorBySlugResult =
+   | ColorBySlugOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type ColorCreateOk = {
-  __typename?: 'ColorCreateOk';
-  id: Scalars['Uuid']['output'];
-};
+   __typename?: 'ColorCreateOk'
+   id: Scalars['Uuid']['output']
+}
 
-export type ColorCreateResult = ColorCreateOk | InternalErrorProblem | UnauthorizedProblem | VersionMismatchProblem;
+export type ColorCreateResult =
+   | ColorCreateOk
+   | InternalErrorProblem
+   | UnauthorizedProblem
+   | VersionMismatchProblem
 
 export type ColorMutation = {
-  __typename?: 'ColorMutation';
-  createColor: ColorCreateResult;
-  delete?: Maybe<DeleteColorResult>;
-  updateColor: UpdateColorResult;
-};
-
+   __typename?: 'ColorMutation'
+   createColor: ColorCreateResult
+   delete?: Maybe<DeleteColorResult>
+   updateColor: UpdateColorResult
+}
 
 export type ColorMutationCreateColorArgs = {
-  input: CreateColorInput;
-};
-
+   input: CreateColorInput
+}
 
 export type ColorMutationDeleteArgs = {
-  input?: InputMaybe<DeleteColorInput>;
-};
-
+   input?: InputMaybe<DeleteColorInput>
+}
 
 export type ColorMutationUpdateColorArgs = {
-  input: UpdateColorInput;
-};
+   input: UpdateColorInput
+}
 
 export type ColorQuery = {
-  __typename?: 'ColorQuery';
-  allColor: AllColorResult;
-  colorById: ColorByIdResult;
-  colorBySlug: ColorBySlugResult;
-};
-
+   __typename?: 'ColorQuery'
+   allColor: AllColorResult
+   colorById: ColorByIdResult
+   colorBySlug: ColorBySlugResult
+}
 
 export type ColorQueryColorByIdArgs = {
-  input: ColorByIdInput;
-};
-
+   input: ColorByIdInput
+}
 
 export type ColorQueryColorBySlugArgs = {
-  input: ColorBySlugInput;
-};
+   input: ColorBySlugInput
+}
 
 export type CreateCandleInput = {
-  category_id: Scalars['Uuid']['input'];
-  color_id: Scalars['Uuid']['input'];
-  description: Scalars['String']['input'];
-  images: Array<Scalars['Upload']['input']>;
-  price: Scalars['Int']['input'];
-  title: Scalars['String']['input'];
-  weight: Scalars['Int']['input'];
-};
+   category_id: Scalars['Uuid']['input']
+   color_id: Scalars['Uuid']['input']
+   description: Scalars['String']['input']
+   images: Array<Scalars['Upload']['input']>
+   price: Scalars['Int']['input']
+   title: Scalars['String']['input']
+   weight: Scalars['Int']['input']
+}
 
 export type CreateCategoryInput = {
-  title: Scalars['String']['input'];
-};
+   title: Scalars['String']['input']
+}
 
 export type CreateColorInput = {
-  title: Scalars['String']['input'];
-};
+   title: Scalars['String']['input']
+}
 
 export type CreateOrderInput = {
-  items?: InputMaybe<Array<CreateOrderItem>>;
-};
+   items?: InputMaybe<Array<CreateOrderItem>>
+}
 
 export type CreateOrderItem = {
-  price: Scalars['Int']['input'];
-  productsId: Scalars['Uuid']['input'];
-  quantity: Scalars['Int']['input'];
-};
+   price: Scalars['Int']['input']
+   productsId: Scalars['Uuid']['input']
+   quantity: Scalars['Int']['input']
+}
 
 export type CreateOrderOk = {
-  __typename?: 'CreateOrderOk';
-  ok: Scalars['String']['output'];
-};
+   __typename?: 'CreateOrderOk'
+   ok: Scalars['String']['output']
+}
 
-export type CreateOrderResult = CreateOrderOk | InternalErrorProblem | UnauthorizedProblem;
+export type CreateOrderResult =
+   | CreateOrderOk
+   | InternalErrorProblem
+   | UnauthorizedProblem
 
 export type DeleteCategoryInput = {
-  id: Scalars['Uuid']['input'];
-};
+   id: Scalars['Uuid']['input']
+}
 
 export type DeleteCategoryOk = {
-  __typename?: 'DeleteCategoryOk';
-  ok: Scalars['Uuid']['output'];
-};
+   __typename?: 'DeleteCategoryOk'
+   ok: Scalars['Uuid']['output']
+}
 
-export type DeleteCategoryResult = DeleteCategoryOk | InternalErrorProblem | VersionMismatchProblem;
+export type DeleteCategoryResult =
+   | DeleteCategoryOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type DeleteColorInput = {
-  id: Scalars['Uuid']['input'];
-};
+   id: Scalars['Uuid']['input']
+}
 
 export type DeleteColorOk = {
-  __typename?: 'DeleteColorOk';
-  ok: Scalars['Uuid']['output'];
-};
+   __typename?: 'DeleteColorOk'
+   ok: Scalars['Uuid']['output']
+}
 
-export type DeleteColorResult = DeleteColorOk | InternalErrorProblem | VersionMismatchProblem;
+export type DeleteColorResult =
+   | DeleteColorOk
+   | InternalErrorProblem
+   | VersionMismatchProblem
 
 export type DeleteTokensOk = {
-  __typename?: 'DeleteTokensOk';
-  ok: Scalars['String']['output'];
-};
+   __typename?: 'DeleteTokensOk'
+   ok: Scalars['String']['output']
+}
 
-export type DeleteTokensResult = DeleteTokensOk | InternalErrorProblem;
+export type DeleteTokensResult = DeleteTokensOk | InternalErrorProblem
 
 export type InternalErrorProblem = ProblemInterface & {
-  __typename?: 'InternalErrorProblem';
-  message: Scalars['String']['output'];
-};
+   __typename?: 'InternalErrorProblem'
+   message: Scalars['String']['output']
+}
 
 export type InvalidSortRankProblem = ProblemInterface & {
-  __typename?: 'InvalidSortRankProblem';
-  message: Scalars['String']['output'];
-};
+   __typename?: 'InvalidSortRankProblem'
+   message: Scalars['String']['output']
+}
 
 export type LoginInput = {
-  email: Scalars['String']['input'];
-  password: Scalars['String']['input'];
-};
+   email: Scalars['String']['input']
+   password: Scalars['String']['input']
+}
 
 export type LoginOk = {
-  __typename?: 'LoginOk';
-  email: Scalars['String']['output'];
-  phone: Scalars['String']['output'];
-  role: Role;
-  title: Scalars['String']['output'];
-};
+   __typename?: 'LoginOk'
+   email: Scalars['String']['output']
+   phone: Scalars['String']['output']
+   role: Role
+   title: Scalars['String']['output']
+}
 
-export type LoginResult = InternalErrorProblem | LoginOk | VersionMismatchProblem;
+export type LoginResult =
+   | InternalErrorProblem
+   | LoginOk
+   | VersionMismatchProblem
 
 export type Mutation = {
-  __typename?: 'Mutation';
-  auth: AuthMutations;
-  candles: CandlesMutation;
-  category: CategoryMutation;
-  color: ColorMutation;
-  orders: OrderMutations;
-};
+   __typename?: 'Mutation'
+   auth: AuthMutations
+   candles: CandlesMutation
+   category: CategoryMutation
+   color: ColorMutation
+   orders: OrderMutations
+}
 
 export type NewTokensOk = {
-  __typename?: 'NewTokensOk';
-  token: Scalars['String']['output'];
-};
+   __typename?: 'NewTokensOk'
+   token: Scalars['String']['output']
+}
 
-export type NewTokensResult = InternalErrorProblem | NewTokensOk;
+export type NewTokensResult = InternalErrorProblem | NewTokensOk
 
 export type OrderItems = {
-  __typename?: 'OrderItems';
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['Uuid']['output'];
-  orderId: Scalars['Uuid']['output'];
-  price: Scalars['Int']['output'];
-  product_id: Scalars['Uuid']['output'];
-  quantity: Scalars['Int']['output'];
-  status: Scalars['String']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-  userId: Scalars['Uuid']['output'];
-  version: Scalars['UInt']['output'];
-};
+   __typename?: 'OrderItems'
+   createdAt: Scalars['DateTime']['output']
+   id: Scalars['Uuid']['output']
+   orderId: Scalars['Uuid']['output']
+   price: Scalars['Int']['output']
+   product_id: Scalars['Uuid']['output']
+   quantity: Scalars['Int']['output']
+   status: Scalars['String']['output']
+   updatedAt: Scalars['DateTime']['output']
+   userId: Scalars['Uuid']['output']
+   version: Scalars['UInt']['output']
+}
 
 export type OrderMutations = {
-  __typename?: 'OrderMutations';
-  createOrder: CreateOrderResult;
-};
-
+   __typename?: 'OrderMutations'
+   createOrder: CreateOrderResult
+}
 
 export type OrderMutationsCreateOrderArgs = {
-  input: CreateOrderInput;
-};
+   input: CreateOrderInput
+}
 
 export type OrderQuery = {
-  __typename?: 'OrderQuery';
-  allOrders: AllOrdersResult;
-  allUserOrders: AllUserOrdersResult;
-};
+   __typename?: 'OrderQuery'
+   allOrders: AllOrdersResult
+   allUserOrders: AllUserOrdersResult
+}
 
 export type Orders = {
-  __typename?: 'Orders';
-  createdAt: Scalars['DateTime']['output'];
-  id: Scalars['Uuid']['output'];
-  status: Scalars['String']['output'];
-  total_amount: Scalars['Int']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-  userId: Scalars['Uuid']['output'];
-  version: Scalars['UInt']['output'];
-};
+   __typename?: 'Orders'
+   createdAt: Scalars['DateTime']['output']
+   id: Scalars['Uuid']['output']
+   status: Scalars['String']['output']
+   total_amount: Scalars['Int']['output']
+   updatedAt: Scalars['DateTime']['output']
+   userId: Scalars['Uuid']['output']
+   version: Scalars['UInt']['output']
+}
 
 export type ProblemInterface = {
-  message: Scalars['String']['output'];
-};
+   message: Scalars['String']['output']
+}
 
 export type Query = {
-  __typename?: 'Query';
-  candles?: Maybe<CandlesQuery>;
-  category?: Maybe<CategoryQuery>;
-  color: ColorQuery;
-  orders: OrderQuery;
-  user?: Maybe<UserQuery>;
-};
+   __typename?: 'Query'
+   candles?: Maybe<CandlesQuery>
+   category?: Maybe<CategoryQuery>
+   color: ColorQuery
+   orders: OrderQuery
+   user?: Maybe<UserQuery>
+}
 
 export type RegistrationsInput = {
-  email: Scalars['String']['input'];
-  password: Scalars['String']['input'];
-  phone: Scalars['String']['input'];
-  title: Scalars['String']['input'];
-};
+   email: Scalars['String']['input']
+   password: Scalars['String']['input']
+   phone: Scalars['String']['input']
+   title: Scalars['String']['input']
+}
 
 export type RegistrationsOk = {
-  __typename?: 'RegistrationsOk';
-  email: Scalars['String']['output'];
-  phone: Scalars['String']['output'];
-  role: Role;
-  title: Scalars['String']['output'];
-};
+   __typename?: 'RegistrationsOk'
+   email: Scalars['String']['output']
+   phone: Scalars['String']['output']
+   role: Role
+   title: Scalars['String']['output']
+}
 
-export type RegistrationsResult = InternalErrorProblem | RegistrationsOk | VersionMismatchProblem;
+export type RegistrationsResult =
+   | InternalErrorProblem
+   | RegistrationsOk
+   | VersionMismatchProblem
 
 export enum Role {
-  Admin = 'admin',
-  Guest = 'guest',
-  User = 'user'
+   Admin = 'admin',
+   Guest = 'guest',
+   User = 'user'
 }
 
 export type SortRankInput = {
-  next?: Scalars['String']['input'];
-  prev?: Scalars['String']['input'];
-};
+   next?: Scalars['String']['input']
+   prev?: Scalars['String']['input']
+}
 
 export type TotalCountResolvingOk = {
-  __typename?: 'TotalCountResolvingOk';
-  nextPage: Scalars['Boolean']['output'];
-  prevPage: Scalars['Boolean']['output'];
-  totalCount: Scalars['UInt']['output'];
-  totalCountPage: Scalars['UInt']['output'];
-};
+   __typename?: 'TotalCountResolvingOk'
+   nextPage: Scalars['Boolean']['output']
+   prevPage: Scalars['Boolean']['output']
+   totalCount: Scalars['UInt']['output']
+   totalCountPage: Scalars['UInt']['output']
+}
 
-export type TotalCountResolvingResult = InternalErrorProblem | TotalCountResolvingOk | VersionMismatchProblem;
+export type TotalCountResolvingResult =
+   | InternalErrorProblem
+   | TotalCountResolvingOk
+   | VersionMismatchProblem
 
 export type UnauthorizedProblem = ProblemInterface & {
-  __typename?: 'UnauthorizedProblem';
-  message: Scalars['String']['output'];
-};
+   __typename?: 'UnauthorizedProblem'
+   message: Scalars['String']['output']
+}
 
 export type UpdateCategoryInput = {
-  title: Scalars['String']['input'];
-};
+   title: Scalars['String']['input']
+}
 
 export type UpdateCategoryOk = {
-  __typename?: 'UpdateCategoryOk';
-  id: Scalars['Uuid']['output'];
-};
+   __typename?: 'UpdateCategoryOk'
+   id: Scalars['Uuid']['output']
+}
 
-export type UpdateCategoryResult = InternalErrorProblem | UpdateCategoryOk | VersionMismatchProblem;
+export type UpdateCategoryResult =
+   | InternalErrorProblem
+   | UpdateCategoryOk
+   | VersionMismatchProblem
 
 export type UpdateColorInput = {
-  title: Scalars['String']['input'];
-};
+   title: Scalars['String']['input']
+}
 
 export type UpdateColorOk = {
-  __typename?: 'UpdateColorOk';
-  id: Scalars['Uuid']['output'];
-};
+   __typename?: 'UpdateColorOk'
+   id: Scalars['Uuid']['output']
+}
 
-export type UpdateColorResult = InternalErrorProblem | UpdateColorOk | VersionMismatchProblem;
+export type UpdateColorResult =
+   | InternalErrorProblem
+   | UpdateColorOk
+   | VersionMismatchProblem
 
 export type User = {
-  __typename?: 'User';
-  createdAt: Scalars['DateTime']['output'];
-  email: Scalars['String']['output'];
-  id: Scalars['Uuid']['output'];
-  password: Scalars['String']['output'];
-  phone: Scalars['String']['output'];
-  role: Role;
-  title: Scalars['String']['output'];
-  updatedAt: Scalars['DateTime']['output'];
-  version: Scalars['UInt']['output'];
-};
+   __typename?: 'User'
+   createdAt: Scalars['DateTime']['output']
+   email: Scalars['String']['output']
+   id: Scalars['Uuid']['output']
+   password: Scalars['String']['output']
+   phone: Scalars['String']['output']
+   role: Role
+   title: Scalars['String']['output']
+   updatedAt: Scalars['DateTime']['output']
+   version: Scalars['UInt']['output']
+}
 
 export type UserProfileOk = {
-  __typename?: 'UserProfileOk';
-  profile: User;
-};
+   __typename?: 'UserProfileOk'
+   profile: User
+}
 
-export type UserProfileResult = InternalErrorProblem | UserProfileOk | VersionMismatchProblem;
+export type UserProfileResult =
+   | InternalErrorProblem
+   | UserProfileOk
+   | VersionMismatchProblem
 
 export type UserQuery = {
-  __typename?: 'UserQuery';
-  profile: UserProfileResult;
-};
+   __typename?: 'UserQuery'
+   profile: UserProfileResult
+}
 
 export type VersionInterface = {
-  version: Scalars['UInt']['output'];
-};
+   version: Scalars['UInt']['output']
+}
 
 export type VersionMismatchProblem = ProblemInterface & {
-  __typename?: 'VersionMismatchProblem';
-  message: Scalars['String']['output'];
-};
+   __typename?: 'VersionMismatchProblem'
+   message: Scalars['String']['output']
+}
 
+<<<<<<< HEAD
 export type LoginMutationVariables = Exact<{
   input: LoginInput;
 }>;
@@ -709,3 +761,22 @@ export const AllOrdersDocument = {"kind":"Document","definitions":[{"kind":"Oper
 export const AllUserOrdersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllUserOrders"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"orders"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allUserOrders"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"InternalErrorProblem"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"message"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UnauthorizedProblem"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"message"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"AllUserOrdersOk"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"orders"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"total_amount"}},{"kind":"Field","name":{"kind":"Name","value":"userId"}},{"kind":"Field","name":{"kind":"Name","value":"version"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<AllUserOrdersQuery, AllUserOrdersQueryVariables>;
 export const MutationDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"Mutation"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"CreateOrderInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"orders"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createOrder"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"InternalErrorProblem"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"message"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UnauthorizedProblem"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"message"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CreateOrderOk"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ok"}}]}}]}}]}}]}}]} as unknown as DocumentNode<MutationMutation, MutationMutationVariables>;
 export const UserByIdDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"UserById"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"user"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"profile"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"InternalErrorProblem"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"message"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"VersionMismatchProblem"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"message"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UserProfileOk"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"profile"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"role"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<UserByIdQuery, UserByIdQueryVariables>;
+=======
+export class TypedDocumentString<TResult, TVariables>
+   extends String
+   implements DocumentTypeDecoration<TResult, TVariables>
+{
+   __apiType?: DocumentTypeDecoration<TResult, TVariables>['__apiType']
+
+   constructor(
+      private value: string,
+      public __meta__?: Record<string, any> | undefined
+   ) {
+      super(value)
+   }
+
+   toString(): string & DocumentTypeDecoration<TResult, TVariables> {
+      return this.value
+   }
+}
+>>>>>>> 6e683304a8beb0acbce0e867aa8c0144ce276795

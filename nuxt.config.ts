@@ -22,6 +22,7 @@ export default defineNuxtConfig({
 		"@pinia/nuxt",
 		"@formkit/auto-animate",
 		"@nuxtjs/storybook",
+		"@nuxtjs/tailwindcss",
 	],
 	pinia: {
 		storesDirs: ["./src/app/stores/**"],
