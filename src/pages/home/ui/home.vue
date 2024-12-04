@@ -2,8 +2,7 @@
 import { useAllCandles } from "~/shared/hooks/useAllCandles";
 const { data, isLoading, isError, isPlaceholderData, suspense } =
 	useAllCandles();
-console.log("candles", data);
-await suspense();
+console.log("candles", data, "server url", process.env.SERVER_URL);
 </script>
 
 <template>

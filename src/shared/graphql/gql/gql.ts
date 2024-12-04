@@ -62,7 +62,7 @@ export function graphql(source: "query AllOrders {\n  orders {\n    allOrders {\
 export function graphql(source: "query UserById {\n  user {\n    profile {\n      __typename\n      ... on InternalErrorProblem {\n        message\n      }\n      ... on VersionMismatchProblem {\n        message\n      }\n      ... on UserProfileOk {\n        profile {\n          id\n          role\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query UserById {\n  user {\n    profile {\n      __typename\n      ... on InternalErrorProblem {\n        message\n      }\n      ... on VersionMismatchProblem {\n        message\n      }\n      ... on UserProfileOk {\n        profile {\n          id\n          role\n        }\n      }\n    }\n  }\n}"];
 
 export function graphql(source: string) {
-   return (documents as any)[source] ?? {}
+  return (documents as any)[source] ?? {};
 }
 
 export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;

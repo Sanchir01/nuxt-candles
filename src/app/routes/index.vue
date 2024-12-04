@@ -1,7 +1,7 @@
 <script setup>
-import { HomePage } from '~/pages/home'
+import { HomePage } from "~/pages/home";
 </script>
 <template>
-	<HomePage />
+	<div class="p-10"><HomePage /></div>
 	<VueQueryDevtools />
 </template>
